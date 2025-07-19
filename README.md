@@ -2,13 +2,15 @@
 
 # Clone locally:
 
-     git clone https://github.com/yourusername/mlops-artifact-pipeline.git
+     git clone https://github.com/maste21/mlops-artifact-pipeline.git
 
      cd mlops-artifact-pipeline
 
+     Download anocoda from this website - https://www.anaconda.com/download and install it
+
 # Create Conda Environment & Install Dependencies
    Create environment:
-      Download anocoda from this website - https://www.anaconda.com/download and install it
+   
       conda create -n mlops python=3.8 -y
       conda init
       conda activate mlops
@@ -24,22 +26,10 @@
       pip install -r requirements.txt
       
 # Project Structure
-.
-       ├── src/
-       │   ├── train.py
-       │   ├── inference.py
-       │   └── utils.py
-       ├── config/
-       │   └── config.json
-       ├── tests/
-       │   └── test_train.py
-       ├── .github/
-       │   └── workflows/
-       │       ├── train.yml
-       │       ├── test.yml
-       │       └── inference.yml
-       ├── requirements.txt
-       └── README.md
+
+.<img width="220" height="238" alt="image" src="https://github.com/user-attachments/assets/35e17fe2-1a30-4139-83f3-79b547ad5951" />
+
+      
 
 # Branching Strategy
 
