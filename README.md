@@ -6,7 +6,7 @@
 
      cd mlops-artifact-pipeline
 
-     Download anocoda from this website - https://www.anaconda.com/download and install it
+Download anocoda from this website - https://www.anaconda.com/download and install it
 
 # Create Conda Environment & Install Dependencies
    Create environment:
