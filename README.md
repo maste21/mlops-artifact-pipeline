@@ -8,7 +8,7 @@
 
 # Create Conda Environment & Install Dependencies
    Create environment:
-
+      Download anocoda from this website - https://www.anaconda.com/download and install it
       conda create -n mlops python=3.8 -y
       conda init
       conda activate mlops
@@ -25,25 +25,25 @@
       
 # Project Structure
 .
-├── src/
-│   ├── train.py
-│   ├── inference.py
-│   └── utils.py
-├── config/
-│   └── config.json
-├── tests/
-│   └── test_train.py
-├── .github/
-│   └── workflows/
-│       ├── train.yml
-│       ├── test.yml
-│       └── inference.yml
-├── requirements.txt
-└── README.md
+       ├── src/
+       │   ├── train.py
+       │   ├── inference.py
+       │   └── utils.py
+       ├── config/
+       │   └── config.json
+       ├── tests/
+       │   └── test_train.py
+       ├── .github/
+       │   └── workflows/
+       │       ├── train.yml
+       │       ├── test.yml
+       │       └── inference.yml
+       ├── requirements.txt
+       └── README.md
 
 # Branching Strategy
 
-main: Initial branch with only README.
-classification: For training code/workflows.
-test: For unit tests and testing workflow.
-inference: For inference script and full pipeline workflow.
+      main: Initial branch with only README.
+      classification: For training code/workflows.
+      test: For unit tests and testing workflow.
+      inference: For inference script and full pipeline workflow.
