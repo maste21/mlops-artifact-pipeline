@@ -15,7 +15,7 @@ Download anocoda from this website - https://www.anaconda.com/download and insta
       conda init
       conda activate mlops
       
-    requirements.txt:
+   requirements.txt:
 
       scikit-learn
       joblib
