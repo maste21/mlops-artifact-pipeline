@@ -1,0 +1,76 @@
+name: Inference Pipeline
+
+on:
+  push:
+    branches: [inference]  # Make sure you're pushing to 'inference' branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Pytest
+        run: |
+          export PYTHONPATH=src
+          pytest
+
+  train:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Training Script
+        run: |
+          export PYTHONPATH=src
+          python src/train.py
+
+      - name: Upload model artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: model
+          path: model_train.pkl
+
+  inference:
+    runs-on: ubuntu-latest
+    needs: train
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download trained model
+        uses: actions/download-artifact@v4
+        with:
+          name: model
+
+      - name: Run Inference Script
+        run: |
+          export PYTHONPATH=src
+          python src/inference.py
