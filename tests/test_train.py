@@ -2,8 +2,8 @@ import pytest
 import os
 import joblib
 from sklearn.linear_model import LogisticRegression
-from src.utils import load_config
-from src.train import main as train_main
+from utils import load_config
+from train import main as train_main
 from sklearn.datasets import load_digits
 from sklearn.metrics import accuracy_score
 
